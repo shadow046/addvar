@@ -155,7 +155,7 @@ function installOpenVPN () {
 	rm -f ~/EasyRSA-unix-v${version}.tgz
 	cd /etc/openvpn/easy-rsa/
 	cp vars.example vars
-	wget addtovars
+	cat addtovars >> vars
 	./easyrsa init-pki
 	./easyrsa build-ca nopass
 	cp pki/ca.crt /etc/openvpn/
